@@ -1,0 +1,78 @@
+---
+title: "Readability by Gender and Native Language (Working Title)"
+subtitle: ""
+author: 
+  - Sindhu Priya Mallavarapu
+  - Jena Shah
+thanks: "Code and data are available at: https://github.com/MSindhuPriya/publish_while_female. The replication is available at : "
+date: today
+date-format: long
+abstract: "This research examines the effects of English-proficiency on the standards applied to academic publishing. We are building upon previous research suggesting that women may be held to higher standards in scholarly writing [citation] and investigate if there are differences for non-native English speakers. Utilizing data from CSV datasets, we analyzed the flesch readability scores of papers written by native and non-native English speakers, filtered by gender. Our findings revealed no significant difference in the readability scores based on language proficiency. Albeit, consistent with prior research, we observed gender disparities with women facing higher standards than men. These results highlight the importance of addressing biases in academic publishing and advocating for equality in the area. Future research should explore the reasons behind gender disparities in publishing standards to help identify strategies which can promote inclusivity in scholarly publishing."
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+```
+
+
+# Introduction
+
+The process of academic publishing plays an important role in presenting research findings and advancing our knowledge in the scholarly communities. However, there have been concerns raised with the potential biases in evaluating research papers, particularly based on factors such as language proficiency and gender of the author. Previous studies have suggested that females may face higher standards in academic publishing, as shown by the differences in the readability scores compared to their male counterparts. Additionally, the impact of language proficiency–specifically for non-native English speakers–on publishing standards remains an area of interest and concern for us.
+
+To add onto Hengel’s research, our study investigates the connection between language proficiency, gender, and readability–which we relate to evaluation standards in academic research. We aim to assess whether non-native English speakers are subject to higher standards in academic publishing and whether gender differences persist even more in this context. By analyzing the readability scores of papers authored by native and non-native English speakers and filtering it further through gender, we aim to provide insights into potential biases in the evaluation of scholarly work. Understanding how this works can be beneficial as it can help with encouraging equity, ensuring fairness and diversity with the evaluation of future papers being published.
+
+Our analysis is done through R (@citeR).
+
+
+
+# Data {#sec-data}
+
+## Overview
+
+The replication was done on the paper titled “Publishing While Female: Are Women Held to Higher Standards? Evidence from Peer Review” [add citation]. This was taken from The Economic Journal published by the Oxford Academy. This original paper argues that female publishers are held to higher standards than male publishers. It presents four facts in the paper, namely, (i) female papers are 1%-6% better written than papers by male publishers, (ii) the gap between the readability of these papers widens during peer review, (iii) while men do not improve their writing as time goes on, women do, and (iv) papers written by female publishers are put under review for much longer than papers written by male publishers. The reproduction of this paper further extends these insights by exploring whether being a native english speaker or not changes the conclusions drawn in the original paper. Specifically, this reproduction explores whether native and non-native english speaking female publishers have the same [finish]
+
+
+# Results
+
+We combined the CSV files provided in the original research. We then proceeded to find and compare the central tendencies of the flesch readability scores of native English speaking females, native English speaking males, non-native English speaking females, and non-native English speaking males.
+The results obtained are shown in the table below.
+
+
+[add figures and tables]
+
+
+# Discussion
+
+Our investigation on the influence of English proficiency regarding the standards applied to publishing has provided insightful results. Contrary to our initial expectations, the analysis did not reveal significant differences in the readability scores between papers authored by native and non-native English speakers. This finding challenges the hypothesis of non-native speakers being held to higher standards in academic publishing.
+
+However, our study verifies previous research indicating there are disparities in gender within the publishing standards. Despite the author’s language proficiency, females have higher flesch readability scores compared to men, ultimately showing that they may be held to a higher standard. The results show us the systemic biases that unequally affect female authors. Although we did not find evidence of language-based biases, the limitations must be acknowledged. There are factors beyond readability scores which may still influence the quality of scholarly work, such as language fluency, cultural nuances, and writing style. Future research in this topic should consider an approach which examines the relationships of language proficiency, gender, and other demographic factors.
+
+# Conclusion
+
+In conclusion, our study contributes to the discussion of biases in academic publishing through examining the impact of language proficiency and gender on publishing standards. While we found no significant difference in readability scores between native and non-native English speakers, gender differences exist with females being held to higher standards.
+Moving forward, it is necessary to address these biases and strive for inclusivity when publishing research. The efforts made to promote equality should consist of not only language proficiency, but also gender, race, ethnicity, and other measures of diversity. Through encouraging a more equality-based environment, we can ensure that all scholars have equal opportunities to contribute to the advancement of knowledge.
+
+
+
+\newpage
+
+\appendix
+
+# Appendix {-}
+
+[add in figures from replication and other replication details.]
+
+
+\newpage
+
+
+# References
+
+
