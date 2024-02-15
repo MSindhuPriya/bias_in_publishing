@@ -20,5 +20,3 @@ The original paper can be found at : https://academic.oup.com/ej/article/132/648
 # LLM Usage
 No LLMs were used in this work
 
-# LLM Usage
-No LLMs were used in this work
