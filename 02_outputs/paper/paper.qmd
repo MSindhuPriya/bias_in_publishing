@@ -48,6 +48,8 @@ The data for this paper came from the replication package associated with the pa
 
 ## Measurement
 
+In our study, we used and analyzed the readability scores. These scores did not account for some factors such as grammar, which can be a potential bias in the analysis. Due to this, the overall results may have some errors since the inclusion of grammar when grading readability may have significantly changed the results.
+
 # Results
 
 We combined the CSV files provided in the original research. We then proceeded to find and compare the central tendencies of the Flesch readability scores of native English speaking females, native English speaking males, non-native English speaking females, and non-native English speaking males.
@@ -86,15 +88,6 @@ However, our study verifies previous research indicating there are disparities i
 In conclusion, our study contributes to the discussion of biases in academic publishing through examining the impact of language proficiency and gender on publishing standards. While we found no significant difference in readability scores between native and non-native English speakers, gender differences exist with females being held to higher standards.
 Moving forward, it is necessary to address these biases and strive for inclusivity when publishing research. The efforts made to promote equality should consist of not only language proficiency, but also gender, race, ethnicity, and other measures of diversity. Through encouraging a more equality-based environment, we can ensure that all scholars have equal opportunities to contribute to the advancement of knowledge.
 
-
-
-\newpage
-
-\appendix
-
-# Appendix {-}
-
-[add in figures from replication and other replication details.]
 
 
 \newpage
