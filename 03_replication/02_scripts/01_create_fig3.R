@@ -4,46 +4,38 @@
 
 library(dplyr)
 library(ggplot2) 
-red_data <- read.csv("replication/01_outputs/merged_data.csv")
 
-lang_data <- filter(red_data, NativeLanguage == "Non-English" | NativeLanguage == "English")
+# Create dataset for line 1: At least one female author (% papers)
+tbl <- read.csv("03_replication/03_outputs/merged_data.csv")
 
-ggplot(mapping = aes(lang_data$StatValue, lang_data$NativeLanguage)) + geom_count() + theme_classic()
+y1 <- summarise(group_by(filter(tbl, Sex == "Female"), 
+                         year = lubridate::year(PubDate)),
+                articles_with_female = n_distinct(ArticleID))
 
-eng_data <- filter(red_data, NativeLanguage == "English")
-noneng_data <- filter(red_data, NativeLanguage == "Non-English")
+# Create dataset for line 2: % female authors (per paper)
+tem <- group_by(tbl, year = lubridate::year(PubDate))
+y2 <- summarise(group_by(tem, ArticleID), perc_female = mean(sex == "Female", na.rm = TRUE))
 
-ef <- filter(eng_data, Sex == "Female")
-em <- filter(eng_data, Sex == "Male")
-nef <- filter(noneng_data, Sex == "Female")
-nem <- filter(noneng_data, Sex == "Male")
 
-mean(eng_data$StatValue)
-sd(eng_data$StatValue)
-median(eng_data$StatValue)
-max(eng_data$StatValue)
+# Create dataset for line 3: Majority female authored (% papers)
+y3 <- c()
 
-mean(noneng_data$StatValue)
-sd(noneng_data$StatValue)
-median(noneng_data$StatValue)
-max(noneng_data$StatValue)
+# Create dataset for line 4: 100% female authored (% papers)
+y4 <- c()
 
-mean(ef$StatValue)
-sd(ef$StatValue)
-median(ef$StatValue)
-max(ef$StatValue)
+# Create dataset for line 5: 100% female authored (% single-gender papers)
+y5 <- c()
 
-mean(em$StatValue)
-sd(em$StatValue)
-median(em$StatValue)
-max(em$StatValue)
+# Create the x-axis which is the date
+x <- PubDate
 
-mean(nef$StatValue)
-sd(nef$StatValue)
-median(nef$StatValue)
-max(nef$StatValue)
-
-mean(nem$StatValue)
-sd(nem$StatValue)
-median(nem$StatValue)
-max(nem$StatValue)
+# Create multiple-lined line graph for combined datasets
+matplot(x, cbind(y1, y2, y3, y4, y5), type = "l", xlab ="", ylab = "",
+        col = c("red", "green", "blue", "purple", "orange"))
+legend("topleft", legend = c("At least one female author (% papers)",
+                             "% female authors (per paper)",
+                             "Majority female authored (% papers)",
+                             "100% female authored (% papers)",
+                             "100% female authored (% single-gender papers)"), 
+       col = c("red", "green", "blue", "purple", "orange"), lty = 1,
+       cex = 0.5)
